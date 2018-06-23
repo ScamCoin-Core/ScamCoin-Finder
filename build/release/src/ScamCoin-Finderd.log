@@ -1,0 +1,4 @@
+2018-Jun-24 00:53:40.752916 INFO [daemon] ScamCoin-Finder v0.1.3.1.0.3()
+2018-Jun-24 00:53:40.753428 INFO [daemon] Module folder: ./ScamCoin-Finderd
+2018-Jun-24 00:53:40.753807 ERROR [currency] failed to parse coinbase tx from hard coded blob
+2018-Jun-24 00:53:40.754012 ERROR [currency] Failed to generate genesis block

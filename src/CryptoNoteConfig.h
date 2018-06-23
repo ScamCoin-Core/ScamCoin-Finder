@@ -21,7 +21,7 @@ namespace parameters {
   const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 600000000;
   const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 600000000;
   const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 2000000000;
-  const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x252d79; // addresses start with "intu"
+  const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x5016; // addresses start with "intu"
   const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
   const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
   const uint64_t CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE           = 10; //corrected from 100
@@ -29,13 +29,13 @@ namespace parameters {
   const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 30; //
 
   // MONEY_SUPPLY - total number coins to be generated
-  const uint64_t MONEY_SUPPLY                                  = (uint64_t)(2100000000000); //-1
+  const uint64_t MONEY_SUPPLY                                  = UINT64_C(28000000); //-1
   const uint32_t MANDATORY_TRANSACTION                         = 0;
   const uint32_t KILL_HEIGHT                                   = 0;
   const uint64_t TAIL_EMISSION_REWARD                          = 0;
   const size_t CRYPTONOTE_COIN_VERSION                         = 0;
   const bool ZAWY_DIFFICULTY_V2                          	   = 0;
-  const unsigned EMISSION_SPEED_FACTOR                         = 20; // was 18
+  const unsigned EMISSION_SPEED_FACTOR                         = 21; // was 18
   const uint64_t GENESIS_BLOCK_REWARD                          = 10000;
   static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
@@ -53,7 +53,7 @@ namespace parameters {
   const uint64_t MAX_TRANSACTION_SIZE_LIMIT                    = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 125 / 100 - CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE;
   const uint64_t DEFAULT_FEE                                   = MINIMUM_FEE;
 
-  const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
+  const uint64_t DIFFICULTY_TARGET                             = 80; // seconds
   const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
   const size_t   DIFFICULTY_WINDOW                             = 720; // 50 blocks
   const size_t   DIFFICULTY_CUT                                = 60;  // 5 timestamps to cut after sorting
@@ -94,13 +94,13 @@ namespace parameters {
   static_assert(0 < UPGRADE_VOTING_THRESHOLD && UPGRADE_VOTING_THRESHOLD <= 100, "Bad UPGRADE_VOTING_THRESHOLD");
   static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 
-  const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "intu-blocks.dat";
-  const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "intu-blockindexes.dat";
-  const char     CRYPTONOTE_BLOCKSCACHE_FILENAME[]             = "intu-blockscache.dat";
-  const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "intu-poolstate.bin";
-  const char     P2P_NET_DATA_FILENAME[]                       = "intu-p2pstate.bin";
-  const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "intu-blockchainindices.dat";
-  const char     MINER_CONFIG_FILE_NAME[]                      = "intu-miner_conf.json";
+  const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "shit-blocks.dat";
+  const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "shit-blockindexes.dat";
+  const char     CRYPTONOTE_BLOCKSCACHE_FILENAME[]             = "shit-blockscache.dat";
+  const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "shit-poolstate.bin";
+  const char     P2P_NET_DATA_FILENAME[]                       = "shit-p2pstate.bin";
+  const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "shit-blockchainindices.dat";
+  const char     MINER_CONFIG_FILE_NAME[]                      = "shit-miner_conf.json";
   } // parameters
 
   const uint64_t START_BLOCK_REWARD                            = (UINT64_C(10) * parameters::POINT);
@@ -109,8 +109,8 @@ namespace parameters {
   const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(2640));
 
 
-const char     CRYPTONOTE_NAME[]                             = "intucoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001904e029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101128f6e2f5ff1cc0d95bf80839501c07d79fcb80726f3ca8cdc094b0e2d89dfd3";
+const char     CRYPTONOTE_NAME[]                             = "ScamCoin-Finder";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001904e029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101e2aca795a83c79a09272992a37a0349fa54cc86fcf670cf21093f2c4ee3d3dec";
 
 const uint32_t GENESIS_NONCE                                 = 70;
 const uint64_t GENESIS_TIMESTAMP                             = 1515479625;
@@ -126,8 +126,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  500;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              = 17236;
-const int      RPC_DEFAULT_PORT                              = 18236;
+const int      P2P_DEFAULT_PORT                              = 11500;
+const int      RPC_DEFAULT_PORT                              = 11501;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -145,10 +145,7 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
 const std::initializer_list<const char*> SEED_NODES = {
-   "140.82.29.104:17236",
-   "45.77.160.124:17236",
-   "77.93.206.165:17236",
-   "45.77.178.125:17236"
+   "108.61.57.73:11500"
 };
 
 struct CheckpointData {
@@ -164,7 +161,6 @@ __attribute__((unused))
 // {<block height>, "<block hash>"},
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
     //{ 1, "cbce7c37dbad257d29a3bfa93ec1f7b92434b9b806d40d01cb04d0ad2e451735" },
-      { 1, "[checkpoint block see on checkpoint list]" },
 };
 
 } // CryptoNote
