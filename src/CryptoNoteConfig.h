@@ -45,7 +45,7 @@ namespace parameters {
   const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
   const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2; //was 8
   // COIN - number of smallest units in one coin
-  const uint64_t POINT                                         = UINT64_C(1000);        // pow(10, 3)
+  const uint64_t POINT                                         = UINT64_C(690);        // pow(10, 3)
   const uint64_t COIN                                          = UINT64_C(2000000000000);     // pow(10, 6)
   const uint64_t MINIMUM_FEE                                   = UINT64_C(100);        // pow(10, 3)
   const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(10);         // pow(10, 2)
